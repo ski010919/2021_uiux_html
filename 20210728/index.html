@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{background-color:aqua;}
+        h3{color:purple}
+        hr{border:5px solid white}
+        span{color:red} */
+
+        /* 별도파일로 스타일 시트 */
+        /* <!-- <link rel="stylesheet" href="style.css"> --> */
+        /* @import "style.css" */
+        /* @import url("style.css"); */
+
+        /* 셀렉터 */
+        /* 태그 선택자 */
+        h3,li{color:brown}
+        /* 클래스 선택자 */
+        .title{color:skyblue}
+        .warning{background-color:red;color:white}
+
+    </style>
+</head>
+<body>
+    <a href="http://www.naver.com" target="_blank">
+        <img src="../images/testimg.jpg" alt="test">
+    </a>
+
+    <h3>Lorem, ipsum dolor.</h3>
+    <hr>
+    <p>Lorem ipsum dolor <span>sit</span> amet, consectetur <span>adipisicing</span> elit. Nihil, quibusdam.</p>
+
+    <!-- css부모태그로부터 상속 -->
+
+    <!-- 부모태그 -->
+    <div style="color:red">
+        <!-- 자식태그 -->
+        test입니다.
+        <p style="color:initial">test</p>
+    </div>
+
+    <!-- 태그이름 셀렉터 -->
+    <h3 class="title">title</h3>
+    <div>Lorem ipsum <strong>dolor sit amet.</strong> </div>
+    <ul>
+        <li>Lorem.</li>
+        <li class="warning"><strong>Consectetur.</strong> </li>
+        <li>Ducimus?</li>
+    </ul>
+    <div class="title">Lorem, ipsum dolor.</div>
+</body>
+</html>
