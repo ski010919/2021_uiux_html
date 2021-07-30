@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+
+        body{
+            font-family: 'Roboto', sans-serif;
+            font-size:16px
+        }
+
+
+        .box{
+            font-size:2em;
+            font-weight:bold;
+            font-style:italic;
+        }
+        /* p.box{color:blue} */
+
+        /* #header{background-color: skyblue;}
+        div{background-color:blue}
+        div.box{background-color:yellow}
+
+        #header .box{background-color:teal} */
+        
+    </style>
+</head>
+<body>
+    <!-- 클래스 셀렉터  -->
+    <div class="box">test</div>
+    <p class="box">test</p>
+
+    <!-- 아이디 셀렉터 # -->
+    <!-- <div id="header">
+        <div class="menu">
+            <ul>
+                <li>mevu</li>
+                <li>mevu</li>
+                <li>mevu</li>
+                <li>mevu</li>
+                <li>mevu</li>
+            </ul>
+        </div>
+    </div> -->
+
+    <!-- 아이디 동일 이름 불가 > 자바스크립트에서 오류남 -->
+    <div id="header">
+        test
+        <div class="box">
+            안녕하세요
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- 섹션 바로 밑 자식 p태그만 변경 -->
+    <!-- <style>
+        #section>p{background-color:skyblue}
+    </style> -->
+
+    <!-- 섹션 p 자손들 변경 (자손에는 자식도 포함) -->
+    <!-- <style>
+        #section p{background-color:skyblue}
+    </style> -->
+
+    <!-- 점수차이 확인 -->
+        <!-- 우선순위 -->
+         <!-- * < class < id < inline style (tag attribute) < !important -->
+    <style>
+        /* *{background-color: violet;} */
+        #section>div.menu>p{background-color:skyblue}
+        #section p{background-color:orange}
+        div.menu>p{background-color:blue !important}
+    </style>
+
+    <!-- #섹션(부모) / div & p (섹션의 자식) / p&p&p (섹션의 자손 / div p의 자식) -->
+    <div id="section">
+        <div class="menu">
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+        </div>
+        <p>child</p>
+    </div>
+
+
+    <!-- 속성 선택자 -->
+    <style>
+        div[title="test"]{background-color: red;}
+        input[type="text"]{background-color: white;}
+
+        /* img[src$="jpg"] jpg 일때 */
+        img[src$="jpg"]{border:10px solid white}
+    </style>
+    <div title="test">chaeyoung</div>
+    <div title="chaeyoung">Lorem.</div>
+    <input type="text">
+    <img src="../images/testimg.jpg" alt="" class="img">
+    
+    <hr>
+
+    <!-- 가상선택자 -->
+    <style>
+        a:link{text-decoration:none}
+        a:visited{color:black}
+        a:active{background-color: red}
+        a:hover{background-color:gray}
+    </style>
+    <a href="http://www.naver.com">네이버</a>
+    <a href="http://www.korea.com">코리아</a>
+
+    <hr>
+
+    <!-- 수도클래스 선택자 2n=짝수 / 2n+1=홀수-->
+    <style>
+        ul.test > li:first-child{background-color:red}
+        ul.test > li:last-child{background-color:skyblue}
+        ul.test > li:nth-child(5){background-color:blue}
+        ul.test > li:nth-child(2n){background-color:teal}
+    </style>
+    <ul class="test">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
+
+<hr>
+
+    <!-- 박스모델속성 -->
+    <style>
+        div.box1{
+            border-top:5px solid orange;
+            border-bottom:5px solid skyblue;
+            text-align:center;
+            width:100px;height:100px;
+            line-height:100px;
+            padding:20px 40px;
+            margin:20px;
+            border-width:2px;
+        }
+    </style>
+    <div class="box1">text</div>
+
+    <br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>
