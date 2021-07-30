@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* img{float:left;margin-right:10px;} */
+        /* div.box{
+            width: 500px;
+            height: 200px;
+            background-color:skyblue;
+        }
+        div.inBox1{
+            background-color:green;
+            width: 200px;height: 200px;
+            float:left
+        }
+        div.inBox2{
+            width: 200px;height: 200px;
+            background-color:orange;
+           float:right
+        } */
+
+        div.box{
+            width: 500px;
+            /* height: 200px; */
+            background-color:skyblue;
+        }
+        div.inBox1{
+            width: 200px;height: 300px;
+            background-color:orange;
+            float:left
+        }
+        div.inBox2{
+            width: 200px;height: 300px;
+            background-color:lightcoral;
+            float:right
+        }
+        /* 박스 사이 부모가 높이 자동으로 하기 */
+        .clear{clear:both}
+
+        div.box1{width: 300px;height: 300px;background:green;}
+        div.box1:before{
+            content:"이채영님,";display:block
+        }
+        div.box1:after{
+            content:"반갑습니다.";display:block
+        }
+
+        /* div.box:after{
+            content:"";clear:both; display:block
+        } */
+
+        .clearfix:after{
+            content:"";clear:both;display:block
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <img src="../images/testimg.jpg" alt=""> -->
+    <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, voluptatibus. -->
+
+    <div class="box clearfix">
+        <div class="inBox1">left</div>
+        <div class="inBox2">right</div>
+        
+    </div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, officiis.
+
+    <div class="box1">
+        안녕하세요.
+    </div>
+</body>
+</html>
