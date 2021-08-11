@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clearfix:after{
+            content:"";clear:both;display:block;}
+        *{margin:0;padding:0}
+        li{list-style: none;}
+
+        div.box{
+            width: 500px;
+            background: skyblue;
+        }
+        div.box1{
+            width: 200px;height: 200px;
+            background: coral;
+            float: left;
+        }
+        div.box2{
+            width: 200px;height: 200px;
+            background: violet;
+            float:right;
+        }
+
+        div.nav>ul>li{
+            width: 200px;height: 40px;
+            line-height: 40px;
+            background: violet;
+            text-align:center;
+            float: left;
+        }
+        div.nav>ul>li:hover{background: skyblue;}
+        div.nav>ul>li:hover:nth-child(2n){background: coral;}
+        div.nav{width: 1000px;margin: 0 auto;}
+        div.nav>h1{text-align: center;}
+
+
+    </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <div class="box1">left</div>
+        <div class="box2">right</div>
+    </div>
+    Lorem ipsum dolor sit amet.
+
+    <br><hr><br>
+
+    <div class="nav">
+        <h1>logo</h1>
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+        </ul>
+    </div>
+</body>
+</html>

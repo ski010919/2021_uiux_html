@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        /* float_4 */
+        header.header{
+            width: 1000px;background-color:skyblue;margin: 0 auto;
+        }
+        header>h1{width: 1000px;background-color:coral;}
+        header>h1>a{display: block;text-align: center;line-height: 40px;}
+        ul>li{float: left;width: 20%;}
+        ul>li>a{display: block;text-align: center;line-height: 40px;}
+        ul>li>a:hover{background-color:#f00;color:white;}
+        div.visual{height: 400px;background-color: #ccc;line-height: 400px;text-align: center;}
+        div.container{width: 1000px;background-color:#ff0;;margin: 0 auto;}
+        .aside{float: left;width: 300px;line-height: 500px;background-color: #f0f;text-align: center;}
+        .section{float: right;width: 680px;line-height: 500px;background-color: #0ff;text-align: center;}
+        footer.footer{width: 1000px;line-height: 100px;background-color: #aaa;margin: 0 auto;text-align: center;}
+
+        /* position_4 */
+        #head{width: 1000px;height: 200px;position: relative;margin: 0 auto;}
+        #head>h1{width: 200px;background-color: coral;}
+        #head>h1>a{line-height: 200px;text-align: center;display: block;}
+        .util{width: 400px;height: 50px;position: absolute;right: 0;top: 0;background-color:skyblue;}
+        .nav{width: 600px;position: absolute;right: 0;bottom: 0;background-color:violet;}
+        .nav>ul>li{float: left;width: 20%;}
+        .nav>ul>li>a{display: block;text-align: center;line-height: 60px;}
+    </style>
+</head>
+<body>
+    <!-- float_4 -->
+    <header class="header">
+        <h1><a href="#">logo</a></h1>
+        <ul class="clearfix">
+            <li><a href="#">menu1</a></li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a></li>
+            <li><a href="#">menu4</a></li>
+            <li><a href="#">menu5</a></li>
+        </ul>
+    </header>
+    <div class="visual">visual</div>
+    <div class="container clearfix">
+        <aside class="aside">aside</aside>
+        <section class="section">section</section>
+    </div>
+    <footer class="footer">footer</footer>
+
+    <br><hr><br>
+    <!-- position_4 -->
+    <div id="head">
+        <h1><a href="#">logo2</a></h1>
+        <div class="util">utilmenu</div>
+        <nav class="nav clearfix">
+            <ul>
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+                <li><a href="#">menu5</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</body>
+</html>

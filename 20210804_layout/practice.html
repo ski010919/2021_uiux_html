@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout 연습</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        /* header */
+        header#header{width: 1000px;background-color:ivory;margin: 0 auto;padding-top: 10px;}
+        header#header h1{width: 100px;height: 100px;background-color:coral;margin: 0 auto;margin-bottom: 10px;}
+        header#header h1>a{display: block;text-align: center;line-height: 100px;}
+        header#header>nav.gnb>ul>li{float: left;width: 20%;background-color: pink;}
+        header#header>nav.gnb>ul>li>a{display: block;text-align: center;line-height: 40px;}
+        header#header>nav.gnb>ul>li>a:hover{background-color: violet;color: white;}
+
+        /* visual */
+        div.visual{background-color:skyblue;padding: 10px;margin-bottom: 20px;}
+        div.container{width: 1000px;height: 300px;background-color:teal;margin: 0 auto;position: relative;}
+        div.box1{width: 300px;height: 150px;background-color:wheat;position: absolute;bottom: 50%;margin-bottom: -75px;}
+        div.box2{width: 400px;height: 200px;background-color: wheat;position: absolute;right: 0;bottom: 0;margin-right: 20px;}
+
+        /* section */
+        section.section{width: 1000px;margin: 0 auto;}
+        section.section>ul>li{float: left;width: 231.25px;margin-right: 25px;}
+        section.section>ul>li:last-child{margin-right: 0;}
+        section.section>ul>li>img{width: 100%;}
+        section.section h3{text-align: center;}
+        section.section h3:after{
+            content:""; width: 60px;height: 2px;background-color: #000;
+            margin: 8px auto;display: block;
+        }
+        section.section>p{text-align: center;margin-bottom: 20px;}
+        
+        .section2{width: 1000px;margin: 0 auto;}
+        .section2>ul>li{float: left;width: 316.666px;margin-right: 25px;}
+        .section2>ul>li:last-child{margin-right: 0;}
+        .section2>ul>li>img{width: 100%;}
+        
+        section.section3{width: 1000px;margin: 0 auto;}
+        section.section3 h3{text-align: center;}
+        section.section3>ul>li{float: left;width: 231.25px;margin-right: 25px;}
+        section.section3>ul>li:last-child{margin-right: 0;}
+        section.section3>ul>li>img{width: 100%;}
+        section.section3 h3:after{
+            content:""; width: 60px;height: 2px;background-color: #000;
+            margin: 8px auto;display: block;
+        }
+        section.section3>p{text-align: center;margin-bottom: 20px;}
+
+        /* footer */
+        .footer{width: 1000px;margin: 0 auto;}
+        .footer h2{width: 200px;height: 200px;float: left;}
+        .footer address{float: left;width: 800px;}
+
+        /* common */
+        .bgViolet{background-color:violet !important;}
+        .bgGrey{background-color: #ccc !important;}
+        .pt30{padding-top: 30px !important;}
+        .pb30{padding-bottom: 30px !important;}
+
+    </style>
+</head>
+<body>
+    <!-- header area start -->
+    <header id="header">
+        <h1><a href="#">LOGO</a></h1>
+        <nav class="gnb">
+            <ul class="clearfix">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">COMPANY</a></li>
+                <li><a href="#">PRODUCT</a></li>
+                <li><a href="#">ONLINE</a></li>
+                <li><a href="#">COMMUNITY</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- header area end -->
+
+    <!-- visual area start -->
+    <div class="visual">
+        <div class="container">
+            <div class="box1"></div>
+            <div class="box2"></div>
+        </div>
+    </div>
+    <!-- visual area end -->
+
+    <!-- section area start -->
+    <section class="section pt30 pb30">
+        <h3>PRODUCT</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <ul class="clearfix">
+            <li><img src="../images/testimg.jpg" alt=""></li>
+            <li><img src="../images/testimg.jpg" alt=""></li>
+            <li><img src="../images/testimg.jpg" alt=""></li>
+            <li><img src="../images/testimg.jpg" alt=""></li>
+        </ul>
+    </section>
+    <div class="bgViolet pt30 pb30">
+        <section class="section2">
+            <ul class="clearfix">
+                <li><img src="../images/testimg.jpg" alt=""></li>
+                <li><img src="../images/testimg.jpg" alt=""></li>
+                <li><img src="../images/testimg.jpg" alt=""></li>
+            </ul>
+        </section>
+    </div>
+    <section class="section3 pt30 pb30">
+        <h3>PRODUCT</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <ul class="clearfix">
+            <li><img src="../images/testimg.jpg" alt=""></li>
+            <li><img src="../images/testimg.jpg" alt=""></li>
+            <li><img src="../images/testimg.jpg" alt=""></li>
+            <li><img src="../images/testimg.jpg" alt=""></li>
+        </ul>
+    </section>
+    <!-- section area end -->
+
+    <!-- footer area start -->
+    <footer id="footerwrap" class="bgGrey pt30 pb30">
+        <div class="footer clearfix">
+            <h2>LOGO</h2>
+            <address>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora perferendis accusantium quaerat rerum facilis quae in aspernatur, voluptatum quisquam dolore.
+            </address>
+        </div>
+    </footer>
+    <!-- footer area end -->
+</body>
+</html>

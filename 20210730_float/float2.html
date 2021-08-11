@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clearfix:after{
+            content:"";clear:both;display:block;
+        }
+        *{margin: 0;padding:0}
+        li{list-style: none;}
+
+        div.box{
+            width: 500px;
+            background: skyblue;
+        }
+        div.box1{
+            width: 200px;height: 200px;
+            background: orange;
+            float: left;
+        }
+        div.box2{
+            width: 200px;height: 200px;
+            background: green;
+            float:right;
+        }
+
+        div.nav>ul>li{
+            float: left;
+            width: 200px; text-align: center;
+            height: 40px; line-height: 40px;
+            background: skyblue;
+        }
+        div.nav>ul>li:hover{background: orange;}
+        div.nav{width: 1000px;margin:0 auto}
+        div.nav{text-align: center;}
+
+        div.logo>ul>li{
+            width: 200px;
+            height: 40px;line-height:40px;
+            background: coral;
+            text-align: center;
+            float: left;
+        }
+        div.logo>ul>li:hover{background: skyblue;}
+        div.logo{width: 800px;margin: 0 auto;}
+        div.logo{text-align: center;}
+
+        div.test{
+            width: 800px;
+            background: coral;
+        }
+        div.test1{
+            width: 300px;height: 300px;
+            background: skyblue;
+            float: left;
+        }
+        div.test2{
+            width: 300px;height: 300px;
+            background: yellow;
+            float:right
+        }
+        div.test1:hover{background: navy;color:white}
+        div.test2:hover{background: red;color:white;}
+
+    </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <div class="box1">left</div>
+        <div class="box2">right</div>
+    </div>
+    dkdkdkdkdk
+    <hr><br>
+
+    <div class="nav clearfix">
+        <h1>logo</h1>
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+        </ul>
+    </div>
+
+    <br>
+
+    <div class="logo clearfix">
+        <h1>logo</h1>
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+    </div>
+
+    <br><hr><br>
+
+    <div class="test clearfix">
+        <div class="test1">left</div>
+        <div class="test2">right</div>
+    </div>
+    Lorem ipsum dolor sit amet.
+</body>
+</html>
