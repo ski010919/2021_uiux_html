@@ -47,8 +47,8 @@ div#content .field .icon.email{background-position: 0 -47px;}
 div#content .field .icon.pass{background-position: 0 -466px;}
 div#content .field .icon.pass2{background-position: 0 -515px;}
 
-p.radio>input:nth-child(1):checked ~ label.male{background: pink !important;}
-p.radio>input:nth-child(2):checked ~ label.female{background: pink !important;}
+p.radio>input:nth-child(1):checked ~ label.male{background: #ccc !important;}
+p.radio>input:nth-child(2):checked ~ label.female{background: #ccc !important;}
 
 div#content .field.radio{height: 50px;}
 div#content .field.radio input{position: absolute;left: 20px;top: 20px;}
@@ -67,19 +67,42 @@ div#content .field.birth label{
     float: left;width: 53px;height: 49px;line-height: 49px;text-align: center;
     background: #f7f7f7; color: #757575;border-right: 1px solid #efefef;
 }
-div#content .field.birth input{float: left;}
-div#content .field.birth .field-wall{
+div#content .field.birth input,
+div#content .field.confirm input{
+    float: left;
+}
+
+div#content .field.birth .field-wall,
+div#content .field.confirm .field-wall{
     float: left;width: 0;height: 29px;border-right: 1px solid #cdcdcd;
     margin-top: 10px;text-indent: -9999px;
 }
-div#content .field.birth select{
+div#content .field.birth select,
+div#content .field.confirm select{
     float: left;width: 110px;height: 29px;border: 0 none;
     line-height: 29;margin-top: 10px;margin-left: 9px;margin-right: 9px;
     font-size: 15px;color: #757575;
 }
 
+div#content .field.confirm .btn-click{
+    width: 99px;height: 31px;background: #fff;
+    border: 1px solid #dcdcdc;cursor: pointer;
+    position: absolute;right: 15px;top: 10px;
+}
+
+div#content .btn-submit{
+    width: 100%;height: 59px;border: 1px solid #1fbc02;
+    background-color: #1fbc02;
+    background-image: url(../images/btn_join2.gif);
+    background-repeat: no-repeat;
+    background-position: 50% -2px;
+    text-indent: -9999px;
+    cursor: pointer;
+}
 
 /* commom */
 .w458{width: 458px !important;}
+.w303{width: 303px !important;}
+.w202{width: 202px !important;}
 .w145{width: 145px !important;}
 .w130{width: 130px !important;}
