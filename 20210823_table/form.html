@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>입학원서</title>
+</head>
+<style>
+    *{padding: 0;margin: 0;}
+    li{list-style:none}
+    .clearfix:after{content:"";display: block;clear: both;}
+    
+    table{border-collapse: collapse;}
+    td{
+        text-align: center;border: 1px solid #000;
+        border-collapse: collapse;height: 40px;
+    }
+    
+    h2{text-align: center;font-size:40px;}
+    .table_cell{width: 900px;border: 2px solid #000;margin: 0 auto}
+    .table_cell table{width: 100%;}
+    .table_cell .bg_gray{background: #ddd;font-weight:bold;}
+
+
+
+    /* common */
+    .bb_none{border-bottom:0 none !important;}
+    .mb5{margin-bottom: 5px !important;}
+    .mb10{margin-bottom: 10px !important;}
+    .fl li{float: left;width: 180px !important;}
+    .tal{text-align: left !important;}
+    .pt10{padding-top: 10px !important;}
+    .pl10{padding-left: 10px !important;}
+    .pb10{padding-bottom: 10px !important;}
+
+    </style>
+<body>
+    <h2 class="mb10">입학지원서(일반고)</h2>
+    <div class="table_cell">
+        <table class="mb5">
+            <colgroup>
+                <col width="70">
+                <col width="150">
+                <col width="200">
+                <col width="150">
+                <col width="200">
+                <col width="150">
+            </colgroup>
+            <tr>
+                <td rowspan="4">인적<br>사항</td>
+                <td class="bg_gray">성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명</td>
+                <td>이채영</td>
+                <td class="bg_gray">학&nbsp;&nbsp;교&nbsp;&nbsp;명</td>
+                <td>ㅇㅇ고등학교</td>
+                <td rowspan="4" class="w15">사진첨부</td>
+            </tr>
+            <tr>
+                <td class="bg_gray">주민등록번호</td>
+                <td></td>
+                <td class="bg_gray">e&nbsp;-&nbsp;mail</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="bg_gray">휴 대 폰(C.P)</td>
+                <td></td>
+                <td class="bg_gray">긴급연락처<br>(학부모)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="bg_gray">주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</td>
+                <td colspan="3"></td>
+            </tr>
+        </table>
+        <table>
+            <colgroup>
+                <col width="150">
+                <col>
+                <col width="150">
+                <col>
+                <col width="150">
+                <col>
+            </colgroup>
+            <tr>
+                <td class="bg_gray bb_none">추천교사명</td>
+                <td class="bb_none"></td>
+                <td class="bg_gray bb_none">연락처</td>
+                <td class="bb_none"></td>
+                <td class="bg_gray bb_none">학교연락처</td>
+                <td class="bb_none"></td>
+            </tr>
+        </table>
+        <table>
+            <colgroup>
+                <col width="70">
+                <col width="200">
+                <col>
+            </colgroup>
+            <tr>
+                <td class="bg_gray">인지<br>경로</td>
+                <td>본교를 알게된 경로는<br>(중복응답가능)</td>
+                <td>
+                    <ul class="clearfix fl pt10 pl10 pb10 tal">
+                        <li><input type="checkbox">홈페이지검색</li>
+                        <li><input type="checkbox">인터넷검색</li>
+                        <li><input type="checkbox">진로담당 선생님 추천</li>
+
+                        <li><input type="checkbox">지인소개</li>
+                        <li><input type="checkbox">모바일검색</li>
+                        <li><input type="checkbox">간판</li>
+
+                        <li><input type="checkbox">지하철광고</li>
+                        <li><input type="checkbox">포스터</li>
+                        <li><input type="checkbox">HRD-NET</li>
+
+                        <li><input type="checkbox">고용지원센터소개</li>
+                        <li><input type="checkbox">기타()</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

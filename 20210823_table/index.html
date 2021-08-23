@@ -145,5 +145,101 @@
             </tr>
         </tfoot>
     </table>
+
+    <br><br>
+    <style>
+        table.sample2{width: 500px;}
+        table.sample2 td{
+            background: skyblue;width: 20%;
+            border: 1px solid #000;
+        }
+    </style>
+
+    <table class="sample2">
+        <tr>
+            <td rowspan="4">Lorem.</td>
+            <td>Voluptate?</td>
+            <td>Quae.</td>
+            <td>Nisi?</td>
+            <td rowspan="3">Veniam?</td>
+        </tr>
+        <tr>
+            <td>Lorem.</td>
+            <td>Voluptate?</td>
+            <td>Quae.</td>
+        </tr>
+        <tr>
+            <td>Lorem.</td>
+            <td>Voluptate?</td>
+            <td>Quae.</td>
+        </tr>
+        <tr>
+            <td>L&nbsp;&nbsp;&nbsp;orem.</td>
+            <td colspan="3">Voluptate?</td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <style>
+        table.sample3,table.sample4{width: 900px;}
+        table.sample3 td,table.sample4 td{
+            border: 1px solid #000;
+            text-align: center;height: 40px;
+        }
+
+        table.sample3 .gray{background: #ddd; width: 15%}
+        table.sample3 .blank{width: 20%}
+        table.sample3 .w10{width: 10%}
+        table.sample3 .w15{width: 15%}
+
+
+    </style>
+
+    <h1>입학지원서(일반고)</h1>
+    <table class="sample3">
+        <tr>
+            <td rowspan="4" class="w10">인적<br>사항</td>
+            <td class="gray">성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명</td>
+            <td class="blank">이채영</td>
+            <td class="gray">학&nbsp;&nbsp;교&nbsp;&nbsp;명</td>
+            <td class="blank">ㅇㅇ고등학교</td>
+            <td rowspan="4" class="w15">사진첨부</td>
+        </tr>
+        <tr>
+            <td class="gray">주민등록번호</td>
+            <td class="blank"></td>
+            <td class="gray">e&nbsp;-&nbsp;mail</td>
+            <td class="blank"></td>
+        </tr>
+        <tr>
+            <td class="gray">휴 대 폰(C.P)</td>
+            <td class="blank"></td>
+            <td class="gray">긴급연락처<br>(학부모)</td>
+            <td class="blank"></td>
+        </tr>
+        <tr>
+            <td class="gray">주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</td>
+            <td colspan="3"></td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table class="sample4">
+        <tr>
+            <td>Lorem.</td>
+            <td>Harum.</td>
+            <td>Adipisci.</td>
+            <td>Consectetur.</td>
+            <td>Minima?</td>
+            <td>Culpa.</td>
+        </tr>
+        <tr>
+            <td>Lorem.</td>
+            <td colspan="2">Harum.</td>
+            <td colspan="3">Adipisci.</td>
+        </tr>
+    </table>
 </body>
 </html>
