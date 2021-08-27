@@ -40,7 +40,7 @@ div.nav li:nth-child(7).active{background-position: -840px -50px}
 .visual li img{width: 100%;}
 
 .subVisual{
-    height: 200px;
+    height: 200px; width: 980px;margin: 0 auto;
     display: flex;justify-content: center;align-items: center;
 }
 
