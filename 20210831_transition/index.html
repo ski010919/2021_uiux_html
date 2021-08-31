@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .mb20{margin-bottom: 20px !important;}
+
+        .box1{
+            width: 300px;height: 300px;
+            transition: 0.3s;
+            position: relative;overflow: hidden;
+            background: skyblue;
+            border: 10px solid skyblue;
+            margin: 0 auto;
+        }
+
+        .box1:hover{border: 30px solid skyblue;}
+
+        .box1 img{
+            position: absolute;
+            left: 50%;top: 50%;
+            transform: translate(-50%,-50%) scale(1);
+            transition: 0.3s;
+        }
+
+        .box1:hover img{
+            transform: translate(-50%,-50%) scale(1.1);
+        }
+
+        .box1 .bg{
+            width: 100%;height: 100%;
+            background-color: #000;
+            position: relative;
+            opacity: 0;transition: 0.3s;
+        }
+        .box1:hover .bg{opacity: 0.5;}
+
+        .box1 .circle{
+            width: 50px;height: 50px;
+            _background: pink;
+            position: absolute;left: 50%;top: 50%;
+            transform: translate(-50%,-50%);
+            transition: 0.3s;
+            border: 5px solid #fff;
+            border-radius: 50%;
+        }
+        .box1:hover .circle{
+            transform: translate(-50%,-50%) rotate(90deg);
+        }
+
+        .circle .bar1,
+        .circle .bar2{
+            width: 30px;height: 4px;background: #fff;
+            border-radius: 2px;
+            position: absolute;
+            left: 50%;top: 50%;transform: translate(-50%,-50%);
+        }
+        
+        .circle .bar2{transform: translate(-50%,-50%) rotate(90deg);}
+
+        /* ani */
+
+        .box2{
+            width: 300px;height: 300px;
+            transition: 0.3s;
+            position: relative;overflow: hidden;
+            background: skyblue;
+            border: 10px solid skyblue;
+            margin: 0 auto;
+        }
+
+        .box2:hover{border: 30px solid skyblue;}
+
+        .box2 img{
+            position: absolute;
+            left: 50%;top: 50%;
+            transform: translate(-50%,-50%) scale(1);
+            transition: 0.3s;
+        }
+
+        .box2:hover img{
+            transform: translate(-50%,-50%) scale(1.1);
+        }
+
+        .box2 .bg{
+            width: 100%;height: 100%;
+            background-color: #000;
+            position: relative;
+            opacity: 0;transition: 0.3s;
+        }
+        .box2:hover .bg{opacity: 0.5;}
+
+        .box2 .circle{
+            width: 50px;height: 50px;
+            _background: pink;
+            position: absolute;left: 50%;top: 50%;
+            transform: translate(-50%,-50%);
+            transition: 0.3s;
+            border: 5px solid #fff;
+            border-radius: 50%;
+            /* animation-name: ani; */
+            animation-duration: 0.3s;
+        }
+        @keyframes ani{
+            from{transform: translate(-50%,-50%)}
+            to{transform: translate(-50%,-50%) rotate(180deg)}
+        }
+
+        .box2:hover .circle{
+            /* transform: translate(-50%,-50%) rotate(90deg); */
+            animation-name: ani;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1 mb20">
+        <img src="../images/testimg.jpg" alt="">
+        <div class="bg"></div>
+        <div class="circle">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+        </div>
+    </div>
+    <div class="box2 mb20">
+        <img src="../images/testimg.jpg" alt="">
+        <div class="bg"></div>
+        <div class="circle">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+        </div>
+    </div>
+
+    <!-- button -->
+    <style>
+        .box3{
+            width: 300px;height: 60px;
+            border: 1px solid #000;
+            padding: 0 20px;
+            margin: 0 auto;
+            position: relative;overflow: hidden;
+        }
+        .box3 .txt{line-height: 60px;position: relative;transition: 0.3s;}
+        .box3 .bar{
+            width: 2%;height: 60px;background: hotpink;
+            position: absolute;top: 0;left: 0;
+            transition: 0.3s;
+        }
+
+        .box3:hover .bar{width: 100%;}
+        .box3:hover .txt{color: white;}
+
+        .box3 .txt:before{
+            content: "";display: block;
+            width: 50px;height: 2px;
+            background: #000;
+            position: absolute;right: 0;top: 50%;
+            border-radius: 1px;
+            transition: 0.3s;
+        }
+        .box3 .txt:after{
+            content:"";display: block;
+            position: absolute;right: -8px;top:calc( 50% - 5px );
+            border-width: 6px;
+            border-color: transparent transparent transparent #000;
+            border-style: solid;
+            transition: 0.3s;
+        }
+
+        .box3:hover .txt:before{background: #fff;}
+        .box3:hover .txt:after{border-color: transparent transparent transparent #fff;}
+    </style>
+
+    <div class="box3">
+        <div class="bar"></div>
+        <p class="txt">Platform Business</p>
+    </div>
+</body>
+</html>
