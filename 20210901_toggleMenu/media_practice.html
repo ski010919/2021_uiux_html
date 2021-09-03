@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media practice</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        html,body{height: 100%;}
+        .menuWrap{background: #333;}
+        .menuWrap a{color: white;}
+        .menuWrap h1{
+            width: 100px;text-align: center;line-height: 50px;
+            padding-left: 16px;
+        }
+        .topMenu{position: absolute;left: 120px;top: 0;}
+        .topMenu a{display: block;float: left;padding: 14px 10px;}
+        .toggleMenu{
+            width: 50px;height: 50px;
+            position: absolute;right: 16px;top: 0;
+            cursor: pointer;display: none;
+        }
+        .toggleMenu div{
+            width: 34px;height: 5px;
+            background: white;
+            border-radius: 3px;
+            position: absolute;top: 50%;left: 50%;
+            transform: translate(-50%,-50%);
+            transition: 0.3s;
+        }
+        .toggleMenu .bar1{top: 14px;}
+        .toggleMenu .bar3{top: 36px;}
+
+        .toggleMenu.active .bar1{transform: translate(-50%,-50%) rotate(45deg);top: 50%;}
+        .toggleMenu.active .bar2{opacity: 0;}
+        .toggleMenu.active .bar3{transform: translate(-50%,-50%) rotate(-45deg);top: 50%;}
+
+        @media screen and (min-width:900px){
+            .menuWrap{
+                width: 1200px;position: fixed;
+                left: calc(50% - 600px);top: 20px;
+            }
+        }
+        @media screen and (min-width:600px) and (max-width:899px){
+            body{background: skyblue;}
+        }
+        @media screen and (max-width:599px){
+            .toggleMenu{display: block;position: fixed;}
+            .topMenu{
+                width: 100%;height: 100%;background: coral;
+                position: fixed;top: 0;left: -100%;
+                display: flex;justify-content: center;align-items: center;
+            }
+            .topMenu a{float: none;}
+            .topNav{transform: translateY(-40px);}
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".toggleMenu").click(function(){
+                var toggle = $(".toggleMenu").attr("class")
+
+                if( toggle == "toggleMenu"){
+                    $(".toggleMenu").addClass("active");
+                    $(".topMenu").animate({left:0},300);
+                }else{
+                    $(".toggleMenu").removeClass("active");
+                    $(".topMenu").animate({left:"-100%"},300);
+                }
+
+                $(window).resize(function(){
+                    $(".topMenu").attr("style","");
+                    $(".toggleMenu").removeClass("active");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="menuWrap">
+        <h1><a href="#">LOGO</a></h1>
+        <div class="topMenu">
+            <nav class="topNav clearfix">
+                <a href="#"><i class="fas fa-home"></i>HOME</a>
+                <a href="#"><i class="fab fa-pagelines"></i>NEWS</a>
+                <a href="#"><i class="fas fa-drumstick-bite"></i>PORDUCT</a>
+                <a href="#"><i class="fas fa-comment"></i>COMMUNITY</a>
+            </nav>
+        </div>
+        <div class="toggleMenu">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+</body>
+</html>
