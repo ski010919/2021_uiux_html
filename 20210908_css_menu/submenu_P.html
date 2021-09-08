@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>submenu practice</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/jquery.bxslider.css">
     <script src="../js/jquery-3.1.1.min.js"></script>
@@ -17,33 +17,34 @@
     </script>
     <style>
         .slider img{width: 100%;}
-
-        /* .submenu{opacity: 0;} */
+        /* .submenu{display: none;} */
         .gnb{width: 1000px;margin: 0 auto;position: relative;z-index: 1;}
+
         .gnb>ul>li{
-            float: left;width: calc(100% / 4); 
-            background: pink;transition: 0.3s;
-            position: relative;
+            float: left;width: calc(100% / 4);
+            background:sandybrown;position: relative;transition: 0.3s;
         }
         .gnb>ul>li>a{
             display: block;line-height: 40px;text-align: center;
-            position: relative;z-index: 1;background: salmon;
+            position: relative;z-index: 1;background:saddlebrown;
         }
-        .gnb>ul>li:hover{background: salmon;}
-        /* .gnb>ul>li:first-child .submenu{display: block;} */
+        .gnb>ul>li:hover{background:saddlebrown;}
         .gnb>ul>li:hover .submenu{top: 40px;}
 
+        /* .gnb>ul>li:first-child .submenu{display: block;} */
+        
         .submenu{
-            position: absolute;top: -200%;width: 100%;
-            background: salmon;transition: 0.3s;
+            position: absolute;top:-200%;width: 100%;
+            background:saddlebrown;transition: 0.3s;
         }
-        .submenu a{text-align: center;display: block;line-height: 30px;font-size: 14px;}
-        .submenu a:hover{background: seagreen;}
+        .submenu a{display: block;line-height: 30px;text-align: center;font-size: 14px;}
+        .submenu a:hover{background: salmon;}
+
     </style>
 </head>
 <body>
     <nav class="gnb">
-        <ul class="clearfix">
+        <ul class="clearcix">
             <li>
                 <a href="#">MENU1</a>
                 <ul class="submenu">
