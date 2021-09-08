@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .submenu{display: none;}
+        .gnb{
+            width: 1000px;margin: 0 auto;
+            position: absolute;left: 50%;margin-left: -500px;
+        }
+        .gnb.fix{position: fixed;}
+
+        .gnb>ul>li{float: left;width: calc(100% / 4);background: pink;}
+        .gnb>ul>li>a{display: block;line-height: 40px;text-align: center;}
+        .gnb>ul>li:hover{background: salmon;}
+        .gnb>ul>li:hover a{color: white;}
+
+        /* .gnb>ul>li:first-child .submenu{display: block;} */
+
+        .gnb>ul>li:hover .submenu{display: block;}
+
+        .submenu a{display: block;line-height: 30px;text-align: center;font-size: 12px;}
+        .submenu li:hover{background: seagreen;}
+
+        .visual{background: skyblue;height: 300px;}
+    </style>
+</head>
+<body>
+    <nav class="gnb fix">
+        <ul class="clearfix">
+            <li>
+                <a href="#">MENU1</a>
+                <ul class="submenu">
+                    <li><a href="#">submenu01_01</a></li>
+                    <li><a href="#">submenu01_02</a></li>
+                    <li><a href="#">submenu01_03</a></li>
+                    <li><a href="#">submenu01_04</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">MENU2</a>
+                <ul class="submenu">
+                    <li><a href="#">submenu02_01</a></li>
+                    <li><a href="#">submenu02_02</a></li>
+                    <li><a href="#">submenu02_03</a></li>
+                    <li><a href="#">submenu02_04</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">MENU3</a>
+                <ul class="submenu">
+                    <li><a href="#">submenu03_01</a></li>
+                    <li><a href="#">submenu03_02</a></li>
+                    <li><a href="#">submenu03_03</a></li>
+                    <li><a href="#">submenu03_04</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">MENU4</a>
+                <ul class="submenu">
+                    <li><a href="#">submenu04_01</a></li>
+                    <li><a href="#">submenu04_02</a></li>
+                    <li><a href="#">submenu04_03</a></li>
+                    <li><a href="#">submenu04_04</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="visual"></div>
+</body>
+</html>
