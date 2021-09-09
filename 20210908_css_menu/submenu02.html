@@ -12,33 +12,44 @@
 
     <script>
         $(document).ready(function(){
-            $(".slider").bxSlider()
+            $(".slider").bxSlider();
         });
     </script>
-    <style>
-        .slider img{width: 100%;}
 
-        /* .submenu{opacity: 0;} */
-        .gnb{width: 1000px;margin: 0 auto;position: relative;z-index: 1;}
-        .gnb>ul>li{
-            float: left;width: calc(100% / 4); 
-            background: pink;transition: 0.3s;
-            position: relative;
+    <style>
+        .submenu{display: none;}
+        .gnb{
+            width: 1000px;margin: 0 auto;
+            background-image: linear-gradient(120deg, #fa709a 0%, #fee140 100%);
+            position: relative;z-index: 1;
         }
+        .gnb>ul>li{
+            float: left;width: calc(100% / 5);
+        }
+        .gnb>ul>li:hover{background:orange;}
+        /* .gnb>ul>li:first-child{border-radius:5px 0 0 5px;}
+        .gnb>ul>li:last-child{border-radius:0 5px 5px 0;} */
         .gnb>ul>li>a{
             display: block;line-height: 40px;text-align: center;
-            position: relative;z-index: 1;background: salmon;
+            color: white;font-weight: bold;
         }
-        .gnb>ul>li:hover{background: salmon;}
-        /* .gnb>ul>li:first-child .submenu{display: block;} */
-        .gnb>ul>li:hover .submenu{top: 40px;}
 
-        .submenu{
-            position: absolute;top: -200%;width: 100%;
-            background: salmon;transition: 0.3s;
+        /* .gnb>ul>li:first-child .submenu{display: block;} */
+        .gnb>ul>li:hover .submenu{display: block;}
+        
+        .submenu{position: absolute;z-index: 1;background: white;}
+        .submenu li{float: left;padding: 5px 10px;}
+        .gnb>ul>li:nth-child(2) .submenu{left: calc(50% - 375px);_display: block;}
+        .gnb>ul>li:nth-child(3) .submenu{left: 50%;transform: translateX(-50%);_display: block;}
+        .gnb>ul>li:nth-child(4) .submenu{left: calc(50% + 25px);_display: block;}
+        .gnb>ul>li:nth-child(5) .submenu{right: 0;_display: block;}
+
+        .bar{
+            height: 35px;width: 100%;
+            background: orange;position: absolute;
+            display: none;
         }
-        .submenu a{text-align: center;display: block;line-height: 30px;font-size: 14px;}
-        .submenu a:hover{background: seagreen;}
+        .gnb:hover .bar{display: block;}
     </style>
 </head>
 <body>
@@ -46,7 +57,7 @@
         <ul class="clearfix">
             <li>
                 <a href="#">MENU1</a>
-                <ul class="submenu">
+                <ul class="submenu clearfix">
                     <li><a href="#">sub01_01</a></li>
                     <li><a href="#">sub01_02</a></li>
                     <li><a href="#">sub01_03</a></li>
@@ -80,12 +91,24 @@
                     <li><a href="#">sub04_04</a></li>
                 </ul>
             </li>
+            <li>
+                <a href="#">MENU5</a>
+                <ul class="submenu">
+                    <li><a href="#">sub05_01</a></li>
+                    <li><a href="#">sub05_02</a></li>
+                    <li><a href="#">sub05_03</a></li>
+                    <li><a href="#">sub05_04</a></li>
+                </ul>
+            </li>
         </ul>
+        <div class="bar"></div>
     </nav>
-    <ul class="slider">
-        <li><img src="../images/pc01.jpg" alt=""></li>
-        <li><img src="../images/pc02.jpg" alt=""></li>
-        <li><img src="../images/pc03.jpg" alt=""></li>
-    </ul>
+    <div class="visual">
+        <ul class="slider">
+            <li><img src="../images/pc01.jpg" alt=""></li>
+            <li><img src="../images/pc02.jpg" alt=""></li>
+            <li><img src="../images/pc03.jpg" alt=""></li>
+        </ul>
+    </div>
 </body>
 </html>
