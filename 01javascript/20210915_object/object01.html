@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object01</title>
+    <style>
+        .box3{
+            width: 15px;height: 15px;display: inline-block;
+            border-radius: 50%;background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 배열         0       1     2      3   <요소
+        const city = ["서울","대구","부산","인천"];
+
+        // 객체     {key:value 속성값}
+        const car = {
+            name:"소나타",
+            speed:100,
+            color:"skyblue",
+            
+            start:function(){//무명함수 method
+                // return car.speed+10;
+                
+                return this.speed + 100; //this > 자기자신 이름 나타낼때(예약어)
+            } 
+        };
+        document.write(car.speed);
+        document.write(car.start());
+    </script>
+    <br>
+    -------------------------------------
+    <br>
+    자동차 이름은 <span class="box1">미정</span><br>
+    속도는 <span class="box2">0</span>km/h<br>
+    색상은 <span class="box3"></span><br>
+
+    <button onclick="carData()">자료1</button>
+    <script>
+        function carData(){
+            document.getElementsByClassName("box1")[0].innerHTML = car.name;
+            document.getElementsByClassName("box2")[0].innerHTML = car.speed;
+            document.querySelector(".box3").style.background = car.color;
+        }
+        
+    </script>
+</body>
+</html>
