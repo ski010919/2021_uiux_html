@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event01</title>
+    <style>
+        .box span{color: red;}
+    </style>
+</head>
+<body>
+    <div class="box">Lorem ipsum dolor sit amet <span>consectetur</span> adipisicing elit. <span>Aliquid</span> ab pariatur deleniti <span>corporis</span> labore! Eum quis <span>asperiores</span> voluptatum blanditiis obcaecati.</div>
+    <button class="btn">클릭</button>
+    <script>
+        // 버튼 class인.btn 클릭해서 리스너 등록 후 무언가를 실행 (무언가=함수)
+        // -> ex) .btn 클릭해서 .box의 폰트색을 red로 변경
+
+        const btn = document.getElementsByClassName("btn");
+        const box = document.getElementsByClassName("box");
+
+        // btn[0].onclick = boxColor;
+        // function boxColor(){console.log("확인")};
+
+        // btn[0].onclick = function(){console.log("확인1")};
+
+        // 2. 리스너를 프로퍼티로 등록
+
+        // 1) 함수 등록 후
+        // btn[0].onclick = onBox;
+        // function onBox(){
+        //     box[0].style.color = "red"
+        // }
+
+
+        // 2) 직접
+        // btn[0].onclick = function(){
+        //     box[0].style.color = "red"
+        // }
+
+
+        //3. addEventListener("이벤트이름",함수이름/function(무명함수)) 메소드 활용
+
+        //1) 무명함수
+        // btn[0].addEventListener("click",function(){
+
+        //     box[0].style.color = "blue"
+        //     box[0].style.fontSize = "40px"
+
+        // }); 
+
+        //span dom 구해서 -> 컬렉션
+        const span = document.getElementsByTagName("span")
+        const spanSel = document.querySelectorAll(".box span")
+
+        // const spanAll = document.getElementsByClassName("box")[0].getElementsByTagName("span")
+        const spanAll = box[0].getElementsByTagName("span");
+
+        btn[0].addEventListener("click",function(){
+
+            // span[0].style.color = "orange"
+            // span[1].style.color = "orange"
+            // span[2].style.color = "orange"
+            // span[3].style.color = "orange"
+
+            for(let i=0;i<spanAll.length;i++){
+                spanAll[i].style.color = "orange"
+            }
+        });
+
+        // 2)함수이름등록 후
+        // btn[0].addEventListener("click",onBox); 
+        // function onBox()
+
+        // jquery
+        // $(".btn").click(function(){
+        //     $(".box").css("color","red")
+        // })
+
+    </script>
+</body>
+</html>
