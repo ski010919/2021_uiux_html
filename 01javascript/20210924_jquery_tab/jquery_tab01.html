@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery_tab01</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        .tab li{float: left;padding: 10px 20px;}
+        .tab li.on{background: pink;}
+        .con div{display: none;}
+        .con div:first-child{display: block;}
+    </style>
+</head>
+<body>
+    <ul class="tab clearfix">
+        <li class="on">menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+    </ul>
+    <div class="con">
+        <div>1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptates ab, quae eos quibusdam placeat consequuntur dicta incidunt, cupiditate iure tenetur, optio temporibus harum. Ipsum fugiat optio iste dolore quia?</div>
+        <div>2 Unde ducimus laudantium dolores a asperiores, delectus sed sapiente sequi nam temporibus eveniet laboriosam illo ratione quaerat qui architecto sint, iure necessitatibus tempore sit aut perspiciatis suscipit? Corporis, totam commodi!</div>
+        <div>3 Adipisci laboriosam distinctio accusamus tenetur fugiat consequatur quae nostrum corrupti porro odio repellendus reiciendis animi, sit praesentium, autem illum quos, neque perferendis accusantium sed? Sunt nisi iure incidunt dolore doloribus!</div>
+        <div>4 Quia, quam expedita aspernatur explicabo atque a nemo, repellendus iusto debitis facere tempore architecto iste sit dicta ullam assumenda saepe eaque non id aut voluptatem dolores ducimus enim. Praesentium, iste.</div>
+    </div>
+    <script>
+        // $("ul>li").eq(0).click(function(){
+        //     $("ul>li").removeClass();
+        //     $("ul>li").eq(0).addClass("on");
+        // });
+
+        // $("ul>li").eq(1).click(function(){
+        //     $("ul>li").removeClass();
+        //     $("ul>li").eq(1).addClass("on");
+        // });
+
+        // $("ul>li").eq(2).click(function(){
+        //     $("ul>li").removeClass();
+        //     $("ul>li").eq(2).addClass("on");
+        // });
+
+        // $("ul>li").eq(3).click(function(){
+        //     $("ul>li").removeClass();
+        //     $("ul>li").eq(3).addClass("on");
+        // });
+
+        // for(let i=0;i<$("ul>li").length;i++){
+        //     $("ul>li").eq(i).click(function(){
+        //         $("ul>li").removeClass();
+        //         $("ul>li").eq(i).addClass("on");
+        //     })
+        // }
+
+        $("ul>li").click(function(){
+
+            let num = $(this).index(); // $(this).index(); > 순서 알기
+
+            $("ul>li").removeClass();
+            $(this).addClass("on")
+
+            $(".con>div").hide();
+            $(".con>div").eq(num).show();
+        })
+    </script>
+</body>
+</html>

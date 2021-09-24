@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery01</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script>
+        // $(function(){});
+        //  = 둘이 같음
+        $(document).ready(function(){
+            // $("p").hide(); // 다숨기기
+            // $("p").eq(0).hide().show(); // eq = 몇번째 가져올때 / $("p") > p태그의 컬렉션
+            $("p").eq(0).css("background-color","pink"); // set
+            let pBg = $("p").eq(0).css("background-color"); // get
+            console.log(pBg);
+            console.log($("p").length);
+
+            $(".btn").on("click",function(){
+                $("p").
+                eq(1).
+                css({
+                    "background":"skyblue",
+                    "border":"1px solid #000",
+                    "position":"relative",
+                    "left":"100px"
+                })
+            });
+
+            $(".btn1").click(function(){
+                $("p").eq(1).css({
+                    "background":"white",
+                    "border":"initial",
+                    "position":"initial",
+                })
+                // $("p").eq(1).attr("style","")
+            });
+        });
+    </script>
+</head>
+<body>
+    <button class="btn">변경</button>
+    <button class="btn1">원래대로</button>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate quae neque reiciendis architecto esse soluta aperiam molestias eaque cumque porro magnam iste natus quisquam perspiciatis laudantium vel, ea harum aut!</p>
+    <p>Dolor quod cum rem eveniet culpa possimus provident debitis enim qui molestiae. Ipsa laboriosam aspernatur, provident doloremque dolores adipisci quaerat molestiae suscipit quae! Expedita quasi, illo ex quo modi reiciendis.</p>
+    <p>Vel debitis tempore, sed earum dolore voluptatum ducimus similique odit soluta accusamus nobis aut voluptatibus facere corporis aliquid illo adipisci temporibus quidem pariatur. Soluta consequatur fugit dolorum eius, officiis excepturi!</p>
+    <p>Sapiente ipsum, deserunt itaque ipsa, saepe sint vel iure culpa fuga doloremque tempora? Totam dolore vel vitae, eligendi enim asperiores omnis aliquid, rerum mollitia, dignissimos necessitatibus perferendis? Vero, nobis aperiam?</p>
+
+    <script>
+        // for(let i=0;i<4;i++){
+        // document.getElementsByTagName("p")[i].style.display = "none";
+        // }
+    </script>
+</body>
+</html>
