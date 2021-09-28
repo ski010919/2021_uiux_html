@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse01</title>
+</head>
+<body>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quae nisi nemo soluta enim autem? Nemo quaerat non facilis dolores minus deserunt saepe voluptas qui ullam eveniet veritatis, pariatur fugit tenetur ipsa beatae sapiente, distinctio, maxime aliquam repudiandae temporibus at. Tempora soluta animi et aperiam, error illum earum accusamus quisquam ad repellendus quae mollitia vero aliquam delectus totam. Eaque animi eveniet, dolorem minus tempore necessitatibus beatae explicabo nisi excepturi? Ipsam nesciunt nostrum expedita consectetur iusto molestiae dolor quae earum corporis officia. Placeat distinctio ratione expedita est culpa quam odit autem dolores vero. Ea cupiditate harum ducimus! Libero aut mollitia vel.
+    <img src="../images/testimg.jpg" alt="" onmousemove="where(event)">
+    <div class="infor">
+
+    </div>
+
+    <script>
+        const infor = document.querySelector(".infor")
+        function where(e){
+            let txt ="";
+
+            // txt+= `
+            // clientX : ${e.clientX}, clientY : ${e.clientY}<br>
+            // offsetX : ${e.offsetX}, offsetY : ${e.offsetY}<br>
+            // `;
+            
+            // = 동일방법
+
+            txt += `clientX : ${e.clientX}, clientY : ${e.clientY}<br>`
+            txt += `offsetX : ${e.offsetX}, offsetY : ${e.offsetY}<br>`
+
+            infor.innerHTML = txt;
+        }
+    </script>
+</body>
+</html>
