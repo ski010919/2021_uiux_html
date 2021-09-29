@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onload01</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+
+    <script>
+        // window.onload = function(){
+        //     alert('load1')
+        // }
+
+        // $(document).ready(function(){
+        //     alert('jquery1')
+        // });
+        // $(document).ready(function(){
+        //     alert('jquery2')
+        // });
+
+        function gogo(){
+            alert("load")
+        }
+    </script>
+</head>
+<body onload="gogo()"> <!-- onload="alert('load')" => 위 스크립트 window.onload와 동일한것 / -->
+
+    <!-- 1] -->
+    <!-- <button onclick="alert('누름금지')">버튼</button> -->
+
+    <!-- 2] -->
+    <button class="btn">버튼</button>
+
+    <!-- 3] -->
+    <button class="btn1">버튼</button>
+    <script>
+        // 2]
+        // document.querySelector(".btn").onclick = function(){
+        //     alert("누름금지1")
+        // }
+        document.querySelector(".btn").onclick = noClick;
+        function noClick(){alert("noClick")}
+
+        // 3]
+        // document.querySelector(".btn1").addEventListener("click",function(){
+        //     alert("누름금지2")
+        // });
+        document.querySelector(".btn1").addEventListener("click",noclick1);
+        function noclick1(){alert("noclick1")}
+    </script>
+</body>
+</html>
