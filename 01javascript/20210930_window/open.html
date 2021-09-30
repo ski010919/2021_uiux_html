@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>open</title>
+</head>
+<body>
+    <button onclick="winOpen('http://naver.com')">네이버창열기</button>
+    <button onclick="winOpen('http://daum.net')">다음창열기</button>
+    <button onclick="winOpen('popup.html')">팝업창열기</button>
+
+    <script>
+        function winOpen(url){
+            // 1]
+            // window.open("http://www.daum.net","daum","width=500,height=500")
+            // 그냥 링크만 넣으면 새탭으로 열기 / width,height 설정하면 팝업으로 열기
+
+            // 2]
+            // window.open("popup.html","test","width=500,height=500")
+
+            // 3] function winOpen() <- 소괄호 안에 url 넣어주기
+            window.open(url,"test","width=500,height=500")
+        }
+    </script>
+</body>
+</html>
