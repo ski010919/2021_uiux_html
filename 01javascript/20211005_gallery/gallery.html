@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        #gallery{width: 824px;margin: 0 auto;background: salmon;}
+        #image{width: 760px;margin: 0 auto;}
+        #image p{display: none;}
+
+        #thumbnail{width: 824px;height: 95px;}
+        #thumbnail div{float: left;}
+
+        #thumbnail div.left,
+        #thumbnail div.right{
+            width: 32px;height: 95px;
+            display: flex;justify-content: center;align-items: center;
+            cursor: pointer;
+        }
+
+        #thumbnail div.container{width: 760px;height: 95px;overflow: hidden;}
+
+        #thumbnail div.container ul{
+            width: calc( 760px * 3);
+            position: relative;left:calc( -760px * 0);
+            _transition: 0.3s;
+        }
+        #thumbnail div.container li{float: left;width:120px;margin-left: 8px;_padding-top: 10px;}
+        .ml0{margin-left: 0 !important;}
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $("#thumbnail li").click(function(){ //thumbnail li 클릭할때 이벤트
+                let num = $(this).index();
+                // this = thumbnail li / this의 인덱스(=순서숫자)를 num으로 넣기
+
+                $("#image>p").hide(); // p태그 이미지 먼저 hide
+                $("#image>p").eq(num).show(); // eq(num)의 이미지 show / eq=몇번째 보여줄때
+                // $("#image>p").hide().eq(num).show(); -> 위 2줄 한번에 적기
+            });
+
+            let current = 0;
+            $(".right").click(function(){
+                current++; // -> current = current + 1
+
+                if(current == 3){ current = 2;} // current가 3일때 current를 2로
+
+                imgMove();
+                
+                console.log(current);
+            });
+            $(".left").click(function(){
+                current--; // -> current = current - 1
+
+                if(current < 0){current = 0} // current가 0보다 작으면 current를 0으로
+
+                imgMove();
+
+                console.log(current);
+            });
+
+            function imgMove(){
+                // $(".container>ul").css("left",`-760*${current}px`)
+                $(".container>ul").stop().animate({left:-760*current},300,"linear")
+                // $(".container>ul").css("left",-760*current)
+                // 버튼 누를때 ul의 left값이 -760*current값만큼 움직임
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="gallery">  <!-- width 824px -->
+        <div id="image">  <!-- width 760px -->
+            <!-- p*17>img[src="images/$.jpg"][alt="img$"] -->
+            <p style="display: block;"><img src="images/0.jpg" alt="img0"></p>
+            <p><img src="images/1.jpg" alt="img1"></p>
+            <p><img src="images/2.jpg" alt="img2"></p>
+            <p><img src="images/3.jpg" alt="img3"></p>
+            <p><img src="images/4.jpg" alt="img4"></p>
+            <p><img src="images/5.jpg" alt="img5"></p>
+            <p><img src="images/6.jpg" alt="img6"></p>
+            <p><img src="images/7.jpg" alt="img7"></p>
+            <p><img src="images/8.jpg" alt="img8"></p>
+            <p><img src="images/9.jpg" alt="img9"></p>
+            <p><img src="images/10.jpg" alt="img10"></p>
+            <p><img src="images/11.jpg" alt="img11"></p>
+            <p><img src="images/12.jpg" alt="img12"></p>
+            <p><img src="images/13.jpg" alt="img13"></p>
+            <p><img src="images/14.jpg" alt="img14"></p>
+            <p><img src="images/15.jpg" alt="img15"></p>
+            <p><img src="images/16.jpg" alt="img16"></p>
+            <p><img src="images/17.jpg" alt="img17"></p>
+        </div>
+        <div id="thumbnail" class="clearfix">    <!-- width 824px -->
+            <div class="left"><img src="images/btn_left.gif" alt=""></div>
+            <div class="container">    <!-- width 760px -->
+                <ul class="clearfix">
+                    <li class="ml0"><img src="images/thumb0.jpg" alt="thumb0">0</li>
+                    <li><img src="images/thumb1.jpg" alt="thumb1">1</li>
+                    <li><img src="images/thumb2.jpg" alt="thumb2">2</li>
+                    <li><img src="images/thumb3.jpg" alt="thumb3">3</li>
+                    <li><img src="images/thumb4.jpg" alt="thumb4">4</li>
+                    <li><img src="images/thumb5.jpg" alt="thumb5">5</li>
+                    
+                    <li class="ml0"><img src="images/thumb6.jpg" alt="thumb6">6</li>
+                    <li><img src="images/thumb7.jpg" alt="thumb7">7</li>
+                    <li><img src="images/thumb8.jpg" alt="thumb8">8</li>
+                    <li><img src="images/thumb9.jpg" alt="thumb9">9</li>
+                    <li><img src="images/thumb10.jpg" alt="thumb10">10</li>
+                    <li><img src="images/thumb11.jpg" alt="thumb11">11</li>
+
+                    <li class="ml0"><img src="images/thumb12.jpg" alt="thumb12">12</li>
+                    <li><img src="images/thumb13.jpg" alt="thumb13">13</li>
+                    <li><img src="images/thumb14.jpg" alt="thumb14">14</li>
+                    <li><img src="images/thumb15.jpg" alt="thumb15">15</li>
+                    <li><img src="images/thumb16.jpg" alt="thumb16">16</li>
+                    <li><img src="images/thumb17.jpg" alt="thumb17">17</li>
+                </ul>
+            </div>
+            <div class="right"><img src="images/btn_right.gif" alt=""></div>
+        </div>
+    </div>
+</body>
+</html>
