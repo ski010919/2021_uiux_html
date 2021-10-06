@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery practice2</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        #gallery{width: 824px;margin: 0 auto;background: seagreen;}
+        #image{width: 760px;margin: 0 auto;}
+        #image p{display: none;}
+        #thumbnail{width: 824px;height: 95px;background: salmon;}
+        #thumbnail div{float: left;}
+        #thumbnail div.left,
+        #thumbnail div.right{
+            width: 32px;height: 95px;cursor: pointer;
+            display: flex;justify-content: center;align-items: center;
+        }
+        #thumbnail div.container{width: 760px;margin: 0 auto;overflow: hidden;}
+        #thumbnail div.container ul{
+            width: calc( 760px * 3);height: 95px;
+            position: relative;left: calc( -760 * 0 );
+        }
+        #thumbnail div.container li{
+            float: left;text-align: center;
+            width: 120px;margin-left: 8px;
+        }
+        .ml0{margin-left: 0 !important;}
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#thumbnail li").click(function(){
+                let num = $(this).index();
+                $("#image>p").hide().eq(num).show();
+            });
+            let current = 0;
+            function imgMove(){
+                $(".container>ul").stop().animate({left:-760*current},300)
+            };
+            $(".right").click(function(){
+                current++;
+                if(current == 3){current = 0};
+                imgMove();
+            });
+            $(".left").click(function(){
+                current--;
+                if(current < 0){current = 2};
+                imgMove();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="gallery">
+        <div id="image">
+            <p style="display: block;"><img src="images/0.jpg" alt="img0"></p>
+            <p><img src="images/1.jpg" alt="img1"></p>
+            <p><img src="images/2.jpg" alt="img2"></p>
+            <p><img src="images/3.jpg" alt="img3"></p>
+            <p><img src="images/4.jpg" alt="img4"></p>
+            <p><img src="images/5.jpg" alt="img5"></p>
+            <p><img src="images/6.jpg" alt="img6"></p>
+            <p><img src="images/7.jpg" alt="img7"></p>
+            <p><img src="images/8.jpg" alt="img8"></p>
+            <p><img src="images/9.jpg" alt="img9"></p>
+            <p><img src="images/10.jpg" alt="img10"></p>
+            <p><img src="images/11.jpg" alt="img11"></p>
+            <p><img src="images/12.jpg" alt="img12"></p>
+            <p><img src="images/13.jpg" alt="img13"></p>
+            <p><img src="images/14.jpg" alt="img14"></p>
+            <p><img src="images/15.jpg" alt="img15"></p>
+            <p><img src="images/16.jpg" alt="img16"></p>
+            <p><img src="images/17.jpg" alt="img17"></p>
+        </div>
+        <div id="thumbnail" class="clearfix">
+            <div class="left">
+                <img src="images/btn_left.gif" alt="left">
+            </div>
+            <div class="container">
+                <ul class="clearfix">
+                    <li class="ml0"><img src="images/thumb0.jpg" alt="thumb0">0</li>
+                    <li><img src="images/thumb1.jpg" alt="thumb1">1</li>
+                    <li><img src="images/thumb2.jpg" alt="thumb2">2</li>
+                    <li><img src="images/thumb3.jpg" alt="thumb3">3</li>
+                    <li><img src="images/thumb4.jpg" alt="thumb4">4</li>
+                    <li><img src="images/thumb5.jpg" alt="thumb5">5</li>
+
+                    <li class="ml0"><img src="images/thumb6.jpg" alt="thumb6">6</li>
+                    <li><img src="images/thumb7.jpg" alt="thumb7">7</li>
+                    <li><img src="images/thumb8.jpg" alt="thumb8">8</li>
+                    <li><img src="images/thumb9.jpg" alt="thumb9">9</li>
+                    <li><img src="images/thumb10.jpg" alt="thumb10">10</li>
+                    <li><img src="images/thumb11.jpg" alt="thumb11">11</li>
+                
+                    <li class="ml0"><img src="images/thumb12.jpg" alt="thumb12">12</li>
+                    <li><img src="images/thumb13.jpg" alt="thumb13">13</li>
+                    <li><img src="images/thumb14.jpg" alt="thumb14">14</li>
+                    <li><img src="images/thumb15.jpg" alt="thumb15">15</li>
+                    <li><img src="images/thumb16.jpg" alt="thumb16">16</li>
+                    <li><img src="images/thumb17.jpg" alt="thumb17">17</li>
+                </ul>
+            </div>
+            <div class="right">
+                <img src="images/btn_right.gif" alt="right">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
