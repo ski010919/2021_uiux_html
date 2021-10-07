@@ -1,6 +1,6 @@
 function nowMenu(menu){ // menu = "main"
     if(menu == "main"){
-        $(".bar").css("opacity",0) // jquert ver
+        $(".bar").css("opacity",0) // jquert ver / bar색상 없애기
         console.log("메인연결됨");
     }else{
         $(".menu li").eq(menu).addClass("active") // -> jquert ver

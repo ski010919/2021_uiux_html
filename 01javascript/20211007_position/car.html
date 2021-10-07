@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car move</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        .panel{
+            width: 600px;height: 300px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            position: relative;
+        }
+        .bar{
+            width: 500px;height: 20px;
+            background: gray;
+            position: absolute;left: 50px;top: 190px;
+        }
+        .car{
+            position: absolute;left: 50px;top: 120px;
+        }
+        .car.rotate{
+            transform: rotateY(180deg);
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            const car = $(".car");
+            const bar = $(".bar");
+            //자동차 시작위치, 자동차 도착위치, 자동차 핸들위치, 자동차 이동위치
+
+            const nStart = bar.position().left; //자동차 시작위치 > 변동없어서 const로
+            const nEnd = nStart + bar.width() - car.width(); //자동차 도착위치
+            let current = nStart; //현재위치
+            let nStep = 2; //자동차 이동위치 > 변동있어서 let으로
+            let nTimerId = 0;
+
+            function carMove(){
+                current = current + nStep;
+                // console.log(current);
+                if( current > nEnd ){ //current값이 nEnd보다 커지면 이동위치가 -2씩 빠짐
+                    nStep = -2;
+                    car.addClass("rotate")
+                }
+                if( current < nStart){ //current값이 nStart보다 작아지면 이동위치가 2씩 증가
+                    nStep = 2;
+                    car.removeClass("rotate")
+                }
+                car.css("left",current); //자동차의 위치를 움직이게함
+            }
+
+            $(".btn_start").click(function(){
+                // nTimerId = setInterval(carMove,30);
+                //문제점 : 버튼 계속 클릭하면 중첩되어 실행 > 속도가 빨라짐
+                // > 조건문으로 작성하기
+                if(nTimerId == 0){ //nTimerId 0아니면 실행이 안됨 > 속도중첩x
+                    nTimerId = setInterval(carMove,30);
+                }
+                console.log(nTimerId)
+            });
+            $(".btn_stop").click(function(){
+                clearInterval(nTimerId); // nTimerId값을 가진 setInterval을 멈춤
+                nTimerId = 0;
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="panel">
+        <div class="bar"></div>
+        <div class="car"><img src="../images/car.png" alt=""></div>
+    </div>
+    <button class="btn_start">시작</button>
+    <button class="btn_stop">멈춤</button>
+</body>
+</html>
