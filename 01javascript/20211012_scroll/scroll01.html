@@ -37,12 +37,12 @@
     </style>
     <script>
         $(document).ready(function(){
-            const menuPos = $(".nav").offset().top;
+            const menuPos = $(".nav").offset().top; // 변하지 않는 값이라서 const
 
             $(".menuPos").html(`${parseInt(menuPos)}px`) // parseInt > 정수로 바꿔주는거
 
 
-            let scrollY = $(window).scrollTop();
+            let scrollY = $(window).scrollTop(); // 변하는 값이라서 let
             $(".scrollY").html(`${parseInt(scrollY)}px`)
 
             $(window).scroll(function(){
@@ -52,7 +52,7 @@
                 $(".scrollY").html(`${parseInt(scrollY)}px`)
 
                 // if(메뉴(menuPos)위치와 스크롤위치가 같다면){.nav에 addClass("fixed")}
-                if(menuPos < scrollY){
+                if(scrollY > menuPos){
                     $(".nav").addClass("fixed");
                 }else{
                     $(".nav").removeClass("fixed");
