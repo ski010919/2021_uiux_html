@@ -82,15 +82,31 @@
             // scrolling
             $(window).scroll(function(){
                 let scrollY = $(window).scrollTop();
-                if(scrollY >= $(".scene").eq(0).offset().top){
-                    $(".menu>a").removeClass().eq(0).addClass("on");
-                }
-                if(scrollY >= $(".scene").eq(1).offset().top){
-                    $(".menu>a").removeClass().eq(1).addClass("on");
-                }
-                if(scrollY >= $(".scene").eq(2).offset().top){
-                    $(".menu>a").removeClass().eq(2).addClass("on");
-                }
+                
+                // 1] if문
+                // if(scrollY >= $(".scene").eq(0).offset().top){
+                //     $(".menu>a").removeClass().eq(0).addClass("on");
+                // }
+                // if(scrollY >= $(".scene").eq(1).offset().top){
+                //     $(".menu>a").removeClass().eq(1).addClass("on");
+                // }
+                // if(scrollY >= $(".scene").eq(2).offset().top){
+                //     $(".menu>a").removeClass().eq(2).addClass("on");
+                // }
+
+                // 2] for문
+                // for(let i=0;i<$(".scene").length;i++){
+                //     if(scrollY >= $(".scene").eq(i).offset().top){
+                //          $(".menu>a").removeClass().eq(i).addClass("on");
+                //     }
+                // }
+
+                // 3] $(selector).each()
+                $(".scene").each(function(index){
+                    if(scrollY >= $(this).offset().top){
+                        $(".menu>a").removeClass().eq(index).addClass("on")
+                    }
+                });
             });
         });
     </script>
