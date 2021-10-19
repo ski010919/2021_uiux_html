@@ -79,6 +79,17 @@
                 i = $(this).index();
                 slider("next");
             })
+
+            // ------- mousewheel ------------
+            $(".wrapper").mousewheel(function(e,delta){
+                if(delta < 0){
+                    // console.log("down")
+                    $(".next").trigger("click")
+                }else{
+                    // console.log("up")
+                    $(".prev").trigger("click")
+                }
+            })
         });
     </script>
 </head>
