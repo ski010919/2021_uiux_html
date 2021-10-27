@@ -7,27 +7,52 @@
     <title>women</title>
     <style>
         body{background: #aaa;}
-        .man{position: absolute;left: 200px;}
+        .man{
+            position: absolute;left: 200px;
+            animation:bounce 0.7s infinite alternate;
+        }
         .man div{position: absolute;}
         .man .body{z-index: 2;}
         .man .arm1{
             top: 110px;left: -20px;z-index: 3;
-            transform-origin: 86px 18px;
+            transform-origin: 80px 21px;
             transform: rotate(20deg);
-            animation: armR 1s linear infinite alternate;
+            animation: armR 0.7s linear infinite alternate;
         }
         .man .arm2{
             top: 110px;left: -20px;
-            transform-origin: 86px 18px;
+            transform-origin: 80px 21px;
             transform: rotate(-60deg);
-            animation: armL 1s linear infinite alternate;
+            animation: armL 0.7s linear infinite alternate;
+        }
+        .man .foot1{
+            top: 200px;left: -7px;z-index: 1;
+            transform-origin: 40px 46px;
+            transform: rotate(-20deg);
+            animation: footR 0.7s linear infinite alternate;
+        }
+        .man .foot2{
+            top: 200px;left: -7px;
+            transform-origin: 40px 46px;
+            transform: rotate(20deg);
+            animation: footL 0.7s linear infinite alternate;
         }
 
+        @keyframes bounce{
+            50%{transform: translateY(10px) translateX(5px) scale(1.1);}
+        }
         @keyframes armR{
             100%{transform: rotate(-60deg);}
         }
         @keyframes armL{
             100%{transform: rotate(20deg);}
+        }
+
+        @keyframes footR{
+            100%{transform: rotate(20deg);}
+        }
+        @keyframes footL{
+            100%{transform: rotate(-10deg);}
         }
     </style>
 </head>
@@ -36,8 +61,15 @@
         <div class="body"><img src="../images/body01.png" alt=""></div>
         <div class="arm1"><img src="../images/arm01.png" alt=""></div>
         <div class="arm2"><img src="../images/arm01.png" alt=""></div>
-        <!-- <div class="foot1"><img src="../images/foot01.png" alt=""></div>
-        <div class="foot2"><img src="../images/foot01.png" alt=""></div> -->
+        <div class="foot1"><img src="../images/foot01.png" alt=""></div>
+        <div class="foot2"><img src="../images/foot01.png" alt=""></div>
+    </div>
+    <div class="man" style="left:500px">
+        <div class="body"><img src="../images/body01.png" alt=""></div>
+        <div class="arm1"><img src="../images/arm01.png" alt=""></div>
+        <div class="arm2"><img src="../images/arm01.png" alt=""></div>
+        <div class="foot1"><img src="../images/foot01.png" alt=""></div>
+        <div class="foot2"><img src="../images/foot01.png" alt=""></div>
     </div>
 </body>
 </html>
