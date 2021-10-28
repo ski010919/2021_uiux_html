@@ -60,39 +60,63 @@
             ["전공선택","호텔실무영어Ⅱ","＊","＊",8,3,2,2,"",""  ]
         ];
 
-        // document.querySelector(".subject").innerHTML = obj[0][1]
-
-        //for(초기값;조건문;증감){}
-
-        // for(let i=0;i<obj.length;i++){
-        //     for(let j=0;j<obj[i].length;j++){
-        //         document.write(obj[i][j])
-        //     }
-        //     document.write("<br>")
-        // }
-
-        function print(){
-            let text = '';
+        function printSub(){
             for(let i=0;i<obj.length;i++){
-                    // document.write(i+1+"<br>")
-                    // text += i + "<br>";
-                    // text += `<tr><td>${i}</td></tr>`
-
-                    text += `<tr>`;
-                    for(let j=0;j<obj[i].length;j++){
-                        text += `<td>${j}</td>`
-                    }
-                    text += `</tr>`;
+                if(obj[i][0] == "전공필수"){
+                    document.write("<tr class='bg'>")
+                }else{
+                    document.write("<tr>")
+                }
+                
+                for(let j=0;j<obj[i].length;j++){
+                    document.write("<td>" + obj[i][j] + "</td>")
+                }
+                document.write("</tr>")
             }
-            document.write(text)
         }
     </script>
 
     <style>
-        .box{background: pink;padding: 10px;}
+        .box{}
+        .bg{background:#eee;}
+        table{
+            width: 100%;border-collapse: collapse;
+            border-top: 2px solid orange;
+        }
+        tbody{text-align: center;}
+        tbody tr{border-bottom: 1px solid #aaa;}
+        tbody td{padding: 10px 0;border-right: 1px solid #aaa;}
+        tbody td:last-child{border-right: 0 none;}
+        thead th{padding: 10px 0;background:#555;color: white;}
     </style>
     <table class="box">
-        <script>print()</script>
+        <colgroup>
+            <col width="10%">
+            <col width="17%">
+            <col width="9%">
+            <col width="9%">
+            <col width="9%">
+            <col width="9%">
+            <col width="9%">
+            <col width="9%">
+            <col width="9%">
+            <col width="9%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>과목명</th>
+                <th>모집정원</th>
+                <th>학급수</th>
+                <th>이수기간</th>
+                <th>학점</th>
+                <th>강의</th>
+                <th>실습</th>
+                <th>개설과목</th>
+                <th>비고</th>
+            </tr>
+        </thead>
+        <script>printSub()</script>
     </table>
 </body>
 </html>
