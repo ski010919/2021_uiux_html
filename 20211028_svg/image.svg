@@ -1,0 +1,18 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st4{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+	.st5{fill:#F7941D;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<g id="Layer_4">
+	<path class="st5" d="M440.6,235.6c0,97.8-25.8,186.5-185.7,188.6c-147.7-9.3-177.1-90.8-177.1-188.6S157,58.4,254.8,58.4
+		S440.6,137.7,440.6,235.6z"/>
+	<path class="st4" d="M401.1,264.7c7.2,100.2-63,176.9-140.8,176.9s-150.7-80.2-140.8-176.9C198.4,201.7,328.5,206.7,401.1,264.7z"
+		/>
+	<line class="st6" x1="163" y1="238.7" x2="163" y2="156.2"/>
+	<line class="st6" x1="259.1" y1="219.3" x2="259.1" y2="135.2"/>
+	<line class="st6" x1="353.8" y1="235.8" x2="353.8" y2="153.3"/>
+	<path class="st6" d="M312.7,315.7c0,41.1-24.1,74.4-53.8,74.4s-53.8-33.3-53.8-74.4H312.7z"/>
+</g>
+</svg>
