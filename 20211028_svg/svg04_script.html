@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{height: 300vh;}
+        .box{
+            width: 500px;height: 100vh;
+            background: grey;
+            position: relative;top: 100vh;
+        }
+        .st0{
+            fill:none;
+            stroke:#fff;
+            stroke-width:1;
+            stroke-dasharray: 366;
+            stroke-dashoffset: 366;
+        }
+        @keyframes lineAni{
+            100%{stroke-dashoffset: 0;}
+        }
+
+        .box.on .st0{animation: lineAni 2s alternate forwards;}
+        .box.on .line2{animation-delay: 0.2s;}
+        .box.on .line3{animation-delay: 0.4s;}
+        .box.on .line4{animation-delay: 0.6s;}
+        .box.on .line5{animation-delay: 0.8s;}
+        .box.on .line6{animation-delay: 1s;}
+        .box.on .line7{animation-delay: 1.2s;}
+        .box.on .line8{animation-delay: 1.4s;}
+        .box.on .line9{animation-delay: 1.6s;}
+        .box.on .line10{animation-delay: 1.8s;}
+
+        .view{position: fixed;z-index: 1;}
+</style>
+</head>
+<body>
+    <div class="view">
+        scrollTop: <span class="scrollY">0</span><br>
+        window height: <span class="winHeight">0</span><br>
+        scroll Height: <span class="sHeight">0</span><br>
+    </div>
+    <div class="box">
+        <svg id="Layer_1" x="0" y="0" viewBox="0 0 300 300" >
+            <path class="st0 line1" d="M14 34s48 124.5 123.5 142 128 108 128 108"/>
+            <path class="st0 line2" d="M19.9 32.7s49.8 119.4 118.7 141S259 284 259 284"/>
+            <path class="st0 line3" d="M25.8 31.4s51.5 114.3 114 139.9S252.5 284 252.5 284"/>
+            <path class="st0 line4" d="M31.7 30S85 139.2 140.9 168.9 246 284 246 284"/>
+            <path class="st0 line5" d="M37.6 28.7S92.7 132.8 142 166.5 239.5 284 239.5 284"/>
+            <path class="st0 line6" d="M43.5 27.4s56.9 99 99.6 136.8S233 284 233 284"/>
+            <path class="st0 line7" d="M49.5 26.1s58.6 94 94.9 135.7S226.5 284 226.5 284"/>
+            <path class="st0 line8" d="M55.4 24.8s60.4 88.9 90.1 134.7S220 284 220 284"/>
+            <path class="st0 line9" d="M61.3 23.5s62.2 83.8 85.3 133.6S213.5 284 213.5 284"/>
+            <path class="st0 line10" d="M67.2 22.1s64 78.7 80.5 132.6S207 284 207 284"/>
+        </svg>
+    </div>
+    <script>
+        window.addEventListener("scroll",function(){
+            if(window.pageYOffset > 300){
+                document.querySelector(".box").classList.add("on")
+            }else{
+                document.querySelector(".box").classList.remove("on")
+            }
+
+            document.querySelector(".scrollY").innerHTML = window.pageYOffset; //현재 스크롤 위치
+            document.querySelector(".winHeight").innerHTML = window.innerHeight; // 브라우저 높이
+            document.querySelector(".sHeight").innerHTML = document.body.offsetHeight - window.innerHeight;
+            // 문서의 높이 - 브라우저 높이 = 실제 스크롤 높이
+        });
+    </script>
+</body>
+</html>
