@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg mask</title>
+    <style>
+        body{
+            display: flex;justify-content: center;
+            align-items: center;height: 100vh;
+        }
+        .wrap{width: 300px;height: 300px;}
+        .cls-2.eye{
+            fill:#231f20;
+            transform-origin: 50% 60%;
+            animation: eye 1s alternate infinite;
+        }
+        @keyframes eye{
+            80%{
+                transform: scaleY(1);
+            }
+            100%{
+                transform: scaleY(0.2);
+            }
+        }
+        .cls-4{fill:#ed1c24}
+
+        .mask1{stroke:none;fill:#fff;}
+        .myface{
+            transform: translateX(-10px);
+            animation: faceAni 1s linear alternate infinite;
+        }
+        @keyframes faceAni{
+            to{transform: translateX(-40px);}
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <svg id="Layer_1" viewBox="0 0 246.33 232.57">
+      <!-- <defs></defs> > 마스크,그라데이션 등 설정쓸때 -->
+      <defs>
+          <mask id="face_mask">
+            <path class="mask1" d="M271.67 83.22a48 48 0 1 0-95.2 8.78 139 139 0 0 0-53.09.81 48 48 0 1 0-63 35.72c-11.84 13.94-18.75 30.73-18.75 48.8 0 48.33 49.42 87.5 110.39 87.5s110.39-39.17 110.39-87.5c0-18.57-7.31-35.79-19.76-50a48 48 0 0 0 29.02-44.11Z" transform="translate(-26.83 -33.72)">
+          </mask>
+      </defs>
+      
+
+      <g mask="url(#face_mask">
+          <g class="myface">
+              <circle class="cls-2 eye" cx="101.42" cy="135.53" r="8.08"/>
+              <circle class="cls-2" cx="144.92" cy="135.53" r="8.08"/>
+              <path d="M184.33 207c0 12.09-15.37 21.89-34.33 21.89s-34.33-9.8-34.33-21.89" transform="translate(-26.83 -33.72)" style="fill:none;stroke-linecap:round;stroke:#231f20;stroke-miterlimit:10;stroke-width:3px"/>
+              <circle class="cls-4" cx="57.38" cy="162.78" r="10.5"/>
+              <circle class="cls-4" cx="188.95" cy="162.78" r="10.5"/>
+          </g>
+      </g>
+      <path d="M271.67 83.22a48 48 0 1 0-95.2 8.78 139 139 0 0 0-53.09.81 48 48 0 1 0-63 35.72c-11.84 13.94-18.75 30.73-18.75 48.8 0 48.33 49.42 87.5 110.39 87.5s110.39-39.17 110.39-87.5c0-18.57-7.31-35.79-19.76-50a48 48 0 0 0 29.02-44.11Z" transform="translate(-26.83 -33.72)" style="stroke:#231f20;stroke-miterlimit:10;stroke-width:3px;fill:none"/>
+    </svg>
+</div>
+</body>
+</html>
