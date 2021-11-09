@@ -12,14 +12,16 @@
 
     <script>
         $(document).ready(function(){
-            $(".slider").bxSlider();
+            $(".slider").bxSlider({
+                controls:true,
+            });
         })
     </script>
     <style>
         .subWrap{display: none;}
         .visual img{width: 100%;}
         .gnbWrap{
-            background-image: linear-gradient(120deg, #30cfd0 0%, #330867 100%);
+            background-image: linear-gradient(120deg, #b92b27 0%, #1565C0 100%);
             position: relative;z-index: 1;
             min-width:1000px
         }
@@ -27,9 +29,9 @@
 
         }
         .gnb>ul>li{
-            float: left;width: calc(100% / 5);
+            float: left;width: calc(100% / 4);
             }
-        .gnb>ul>li:hover{background: skyblue;}
+        .gnb>ul>li:hover{background:mediumpurple;}
         .gnb>ul>li>a{
             display: block;text-align: center;line-height: 40px;color: white;
             font-weight:bold
@@ -41,15 +43,14 @@
         .submenu{position: absolute;z-index: 1;}
         .submenu li{float: left;padding:5px 10px}
         .submenu li a{color:white}
-        .gnb>ul>li:nth-child(1) .submenu{left:calc(50% - 500px);_display: block;}
-        .gnb>ul>li:nth-child(2) .submenu{left:calc(50% - 380px);_display: block;}
-        .gnb>ul>li:nth-child(3) .submenu{left:50%;transform:translateX(-50%);_display: block;}
-        .gnb>ul>li:nth-child(4) .submenu{left:calc(50% + 30px);_display: block;}
-        .gnb>ul>li:nth-child(5) .submenu{left:calc(50% + 145px);_display: block;}
+        .gnb>ul>li:nth-child(1) .submenu{left:calc(50% - 500px);}
+        .gnb>ul>li:nth-child(2) .submenu{left:calc(50% - 240px);}
+        .gnb>ul>li:nth-child(3) .submenu{left:calc(50% + 10px)}
+        .gnb>ul>li:nth-child(4) .submenu{left:calc(50% + 260px);}
 
 
         .subWrap{
-            width: 100%;height: 35px;background:#330867;position: absolute;
+            width: 100%;height: 35px;background:mediumpurple;position: absolute;
             left:0;display: none;
         }
 
@@ -59,66 +60,49 @@
     <div class="gnbWrap">
         <nav class="gnb">
             <ul class="clearfix">
-                <li><a href="#">MENU1</a>
+                <li><a href="#">회사소개</a>
                     <div class="subWrap">
                         <ul class="submenu clearfix">
-                            <li><a href="#">sub01_01</a></li>
-                            <li><a href="#">sub01_02</a></li>
-                            <li><a href="#">sub01_03</a></li>
-                            <li><a href="#">sub01_04</a></li>
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">비젼</a></li>
+                            <li><a href="#">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="#">MENU2</a>
+                <li><a href="#">제품소개</a>
                     <div class="subWrap">
                         <ul class="submenu clearfix">
-                            <li><a href="#">sub02_01</a></li>
-                            <li><a href="#">sub02_02</a></li>
-                            <li><a href="#">sub02_03</a></li>
-                            <li><a href="#">sub02_04</a></li>
+                            <li><a href="#">제품1</a></li>
+                            <li><a href="#">제품2</a></li>
+                            <li><a href="#">제품3</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="#">MENU3</a>
+                <li><a href="#">사업영역</a>
                     <div class="subWrap">
                         <ul class="submenu clearfix">
-                            <li><a href="#">sub03_01</a></li>
-                            <li><a href="#">sub03_02</a></li>
-                            <li><a href="#">sub03_03</a></li>
-                            <li><a href="#">sub03_04</a></li>
+                            <li><a href="#">친환경에너지</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="#">MENU4</a>
+                <li><a href="#">고객센터</a>
                     <div class="subWrap">
                         <ul class="submenu clearfix">
-                            <li><a href="#">sub04_01</a></li>
-                            <li><a href="#">sub04_02</a></li>
-                            <li><a href="#">sub04_03</a></li>
-                            <li><a href="#">sub04_04</a></li>
+                            <li><a href="#">묻고답하기</a></li>
+                            <li><a href="#">자유게시판</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="#">MENU5</a>
-                    <div class="subWrap">
-                        <ul class="submenu clearfix">
-                            <li><a href="#">sub05_01</a></li>
-                            <li><a href="#">sub05_02</a></li>
-                            <li><a href="#">sub05_03</a></li>
-                            <li><a href="#">sub05_04</a></li>
-                        </ul>
-                    </div>
-                </li>
-
             </ul>
 
         </nav>
     </div>
     <div class="visual">
         <ul class="slider">
-            <li><img src="../images/pc01.jpg" alt=""></li>
-            <li><img src="../images/pc02.jpg" alt=""></li>
-            <li><img src="../images/pc03.jpg" alt=""></li>
+            <li><img src="images/sliderimg01.png" alt=""></li>
+            <li><img src="images/sliderimg02.png" alt=""></li>
+            <li><img src="images/sliderimg03.png" alt=""></li>
+            <li><img src="images/sliderimg04.png" alt=""></li>
         </ul>
     </div>
 </body>
