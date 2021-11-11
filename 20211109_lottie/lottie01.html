@@ -12,6 +12,7 @@
         #lottie2{width: 500px;}
         #lottie3{width: 500px;}
         #lottie4{width: 500px;}
+        #lottie5{width: 500px;}
     </style>
 </head>
 <body>
@@ -24,6 +25,7 @@
     <div id="lottie2"></div>
     <div id="lottie3"></div>
     <div id="lottie4"></div>
+    <div id="lottie5"></div>
 
     <script>
         lottie.loadAnimation({
@@ -60,6 +62,13 @@
             loop: true,
             autoplay: true,
             path: 'https://assets2.lottiefiles.com/packages/lf20_1fo1igzn.json' // the path to the animation json
+        });
+        lottie.loadAnimation({
+            container: document.querySelector("#lottie5"), // the dom element that will contain the animation
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'https://assets9.lottiefiles.com/packages/lf20_akp2s4nf.json' // the path to the animation json
         });
 
     </script>
