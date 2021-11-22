@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skrollr</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="js/skrollr.min.js"></script>
+    <style>
+        body{height: 500vh;background: #000;}
+        .box{position: fixed;color: #fff;}
+        #scene_1st{
+            background: url(img/bg/space_stars_static.svg);
+            height: 500vh;width: 100%;
+        }
+        .man{position: absolute;left: 50%;top: 50%;}
+        .content1,.content2{
+            width: 300px;height: 200px;background: white;
+            border-radius: 10px;padding: 16px;
+            opacity: 0;
+        }
+        .container{
+            width: 1000px;
+            position: absolute;top: 1500px;
+            background:darkslateblue;
+            left: 50%;padding: 20px;
+            transform: translateX(-50%);
+        }
+        
+        @media screen and (min-width:700px){
+            .content1{
+                position: absolute;top: 500px;right: 10%;
+            }
+            .content2{
+                position: absolute;top: 900px;left: 10%;
+            }
+        }
+        @media screen and (max-width:699px){
+            .content1,.content2{
+                position: fixed;bottom: 50px;
+                left: 50%;margin-left: -150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        현재위치 : <span class="scroll">0</span><br>
+        스크롤높이 : <span class="scrollHeight">0</span>
+    </div>
+
+    <section id="scene_1st" class="view01">
+        <div class="man"
+        data-0="transform: translate(-50%,-50%) scale(0);position:fixed;"
+        data-200="transform: translate(-50%,-50%) scale(1);"
+        >
+            <img src="img/char/character_astronaut.svg" alt=""
+            data-0='display:block'
+            data-400='display:none'
+            >
+            <img src="img/char/character_astronaut_drift.svg" alt=""
+            data-0='display:none'
+            data-400='display:block'
+            data-800='display:none'
+            >
+            <img src="img/char/character_astronaut_excited.svg" alt=""
+            data-0='display:none'
+            data-800='display:block'
+            >
+        </div>
+        <div class="text">
+            <div class="content1"
+                data-0="opacity:0"
+                data-220="opacity:1"
+                data-340="opacity:1"
+                data-480="opacity:0"
+            >
+                1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, eaque?
+            </div>
+            <div class="content2"
+                data-0="opacity:0"
+                data-420="opacity:0"
+                data-520="opacity:1"
+                data-640="opacity:1"
+                data-780="opacity:0"
+            >
+                2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum enim quasi aut laborum eaque magnam natus distinctio, suscipit molestias cumque nam illo consequuntur, sed laudantium explicabo optio? Vero, a veniam?
+            </div>
+            <div class="container"
+            data-0="width:1000px"
+            data-800="width:1000px"
+            data-1000="width:1500px"
+            >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsam, porro impedit laborum eos quae voluptate, at officia provident a error nisi architecto natus maxime! Tenetur eveniet consequatur provident natus? Minus nulla est sit, odio consectetur molestiae quia tempore excepturi veritatis modi aut aspernatur eos corrupti quisquam neque voluptate placeat sunt ipsa ratione in iste quasi? Accusamus eos ab reprehenderit voluptatem eligendi! Debitis labore itaque necessitatibus assumenda, inventore vel animi fuga cum incidunt non, omnis blanditiis veniam eum aut tempora iure dicta? Ullam non beatae consectetur asperiores nihil. Quis provident minima, quos voluptatum repudiandae accusamus veniam, vitae architecto culpa voluptates doloribus! Repudiandae esse expedita officia dicta nisi tenetur, similique dolorem? Quos recusandae consequuntur quis tempora maiores ut iusto incidunt similique alias officiis, magni aspernatur inventore blanditiis facilis numquam officia molestias harum saepe odio non ad! Cum reprehenderit eos reiciendis odit perferendis velit vel numquam repellendus atque exercitationem? Porro corrupti odit architecto amet assumenda unde, illum ullam dolorum cupiditate quidem quis soluta ipsa earum labore veritatis ad natus quod rerum quisquam pariatur, est ex a! Commodi accusamus, vitae laboriosam magnam quibusdam dicta quae architecto. Dolorum illo ex possimus! Beatae officia adipisci voluptatem excepturi aliquam itaque non architecto culpa rem magnam animi qui laboriosam harum, at necessitatibus consectetur eaque, facilis reiciendis. Vero deserunt sint similique sed necessitatibus maiores nisi officia maxime. Laborum excepturi ratione eos impedit harum suscipit, eaque atque saepe quia maxime esse quisquam optio obcaecati dolorum et vitae maiores perspiciatis adipisci quibusdam? Harum laboriosam neque ex et doloribus vero! In aliquam eum repellat repellendus dolorum distinctio voluptatem animi. Dignissimos ipsam unde omnis, voluptatem molestias rem. Quas sunt autem expedita nihil aliquam temporibus doloribus perspiciatis maiores nobis earum quasi fugiat quidem, rem ipsa, et possimus delectus vitae accusantium cum voluptas placeat illo itaque animi! Placeat asperiores qui, assumenda quod pariatur accusantium, aut facilis quia maxime sint itaque voluptate delectus iure magni! Aliquid doloribus quasi adipisci consequuntur! Molestias voluptatibus exercitationem, accusamus consequatur soluta minus culpa? Necessitatibus obcaecati commodi placeat sequi tenetur cumque ipsa quod culpa eaque reprehenderit iure dolores totam eum adipisci, reiciendis cum magni aliquid odit. Excepturi sapiente dolorem accusantium, repudiandae eveniet laudantium? Consequuntur hic veritatis quae aliquid explicabo debitis a est provident ipsam, delectus dicta, doloremque quasi cum officia 
+            </div>
+        </div>
+    </section>
+
+    <script>
+        skrollr.init();
+
+        let scrollY = 0;
+        let wHeight = 0;
+
+        window.addEventListener("scroll",function(){
+            viewer();
+        })
+
+        function viewer(){
+            scrollY = window.pageYOffset;
+            wHeight = document.body.offsetHeight - window.innerHeight;
+            
+            document.querySelector(".scroll").innerHTML = scrollY;
+            document.querySelector(".scrollHeight").innerHTML = wHeight;
+        }
+
+        viewer();
+    </script>
+</body>
+</html>
